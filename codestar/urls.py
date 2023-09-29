@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from blog.views import test_my_blog
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', test_my_blog, name='blog'),
