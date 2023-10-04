@@ -6,5 +6,7 @@ from .models import Post
 
 
 class PostList(generic.ListView):
-    queryset = Post.objects.all()
+    # model = Post
+
+    queryset = Post.objects.filter(status=1)
     template_name = "post_list.html"
