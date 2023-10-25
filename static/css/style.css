@@ -9,6 +9,10 @@ body {
     color: #4A4A4F;
 }
 
+.active {
+    text-decoration: underline;
+}
+
 .red-o {
     color: #E84610;
 }
