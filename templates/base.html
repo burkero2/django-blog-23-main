@@ -94,7 +94,7 @@
               <a
                 class="nav-link {% if request.path == signup_url %}active{%endif%}"
                 href="{% url 'account_signup' %}"
-                >signup</a
+                >Register</a
               >
             </li>
             <li class="nav-item">
@@ -106,14 +106,24 @@
             </li>
             {% endif %}
           </ul>
-          <span class="navbar-text text-muted">
-            adventures of a software developer
-          </span>
+            <span class="navbar-text text-muted">
+                adventures of a software developer
+            </span>
+            
         </div>
       </div>
     </nav>
 
     <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+            <p class="text-end m-3">
+                You are logged in as {{ user.username }}
+            </p>
+        {% else %}
+            <p class="text-end m-3">
+                You are logged not logged in
+            </p>
+        {% endif %}
       {% block content %}
       <!-- Content Goes here -->
       {% endblock content %}
