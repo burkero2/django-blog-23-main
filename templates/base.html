@@ -113,6 +113,7 @@
         </div>
       </div>
     </nav>
+    <!-- displaying Django messages -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -162,5 +163,8 @@
     ></script>
 
     <script src="{% static 'js/script.js' %}"></script>
+    {% block extras %}
+    {% endblock %}
+
   </body>
 </html>
