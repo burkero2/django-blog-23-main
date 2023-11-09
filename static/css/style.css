@@ -50,6 +50,11 @@ body {
     background-color: #23BBBB;
 }
 
+#profile-pic-frame{
+    width: 350px;
+    overflow:hidden;
+}
+
 .scale {
     width: 100%;
     height: auto;

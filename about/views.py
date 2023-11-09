@@ -7,11 +7,22 @@ from .forms import CollaborateForm
 
 
 def about_me(request):
+    """
+    Renders the most recent information on website author and allows user collaboration requests. 
+    Displays an individual instance: model: `about.About`.
+    **Context**
+    ``about``
+    The most recent instance of: model: `about.About`.
+    ``collaborate_form``
+    An instance of: form: `about.CollaborateForm`.
+    **Template: **
+    : template: `about/about.html`
+    """
+
     about = About.objects.all().order_by("-updated_on").first()
 
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
-        print("hello2")
         if collaborate_form.is_valid:
             collaborate_form.save()
             messages.add_message(
